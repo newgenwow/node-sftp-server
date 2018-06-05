@@ -21,8 +21,10 @@
   "license": "ISC",
   "dependencies": {
     "ssh2": "0.5.x",
-    "ssh2-streams": "^0.0.21",
     "tmp": "^0.0.30"
+  },
+  "resolutions": {
+    "ssh2-streams": "git://github.com/newgenwow/ssh2-streams#v0.2.1-v2"
   },
   "bugs": {
     "url": "https://github.com/BriteVerify/node-sftp-server/issues"
