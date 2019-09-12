@@ -291,6 +291,11 @@ var SFTPSession = (function(superClass) {
     }
   };
 
+  SFTPSession.prototype.finishWrite = function(path) {
+    const handles = Object.keys(this.handles).filter(h => this.handles[h].path === path)
+    handles.forEach(h => delete this.handles[h])
+  };
+
   SFTPSession.prototype.do_stat = function(reqid, path, kind) {
     if (EventEmitter.listenerCount(this, "stat")) {
       return this.emit("stat", path, kind, new Statter(this.sftpStream, reqid));
